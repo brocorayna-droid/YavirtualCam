@@ -17,6 +17,8 @@ public class XposedInit implements IXposedHookLoadPackage {
                 || packageName.equals("org.telegram.messenger")) {
 
             XposedBridge.log("YavirtualCam loaded in: " + packageName);
+            Camera1Hook.install();
+            Camera2Hook.install();
         }
     }
 }

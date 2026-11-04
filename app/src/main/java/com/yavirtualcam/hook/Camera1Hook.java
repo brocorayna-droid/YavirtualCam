@@ -82,9 +82,17 @@ public class Camera1Hook {
 
         if (data == null || camera == null) return;
 
-        Context context = (Context) XposedHelpers.callMethod(
-            camera, "getParameters"
-        );
+        Context context;
+        try {
+            Class<?> activityThread = XposedHelpers.findClass(
+                "android.app.ActivityThread", null);
+            context = (Context) XposedHelpers.callStaticMethod(
+                activityThread, "currentApplication");
+        } catch (Throwable error) {
+            return;
+        }
+
+        if (context == null) return;
 
         Camera.Parameters params = camera.getParameters();
         Camera.Size size = params.getPreviewSize();

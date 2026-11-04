@@ -35,7 +35,8 @@ public class MainActivity extends Activity {
         TextView title = new TextView(this);
         title.setText("YAVIRTUALCAM");
         title.setTextColor(Color.WHITE);
-        title.setTextSize(24);\n        title.setPadding(8, 16, 8, 16);
+        title.setTextSize(24);
+        title.setPadding(8, 16, 8, 16);
         title.setGravity(Gravity.CENTER);
         root.addView(title);
 
@@ -46,7 +47,8 @@ public class MainActivity extends Activity {
         cameraSwitch = new Switch(this);
         cameraSwitch.setText("  Virtual Camera");
         cameraSwitch.setTextColor(Color.WHITE);
-        cameraSwitch.setTextSize(18);\n        cameraSwitch.setPadding(8, 16, 8, 16);
+        cameraSwitch.setTextSize(18);
+        cameraSwitch.setPadding(8, 16, 8, 16);
         cameraSwitch.setChecked(prefs.getBoolean("enabled", false));
         root.addView(cameraSwitch);
 
@@ -93,7 +95,9 @@ public class MainActivity extends Activity {
         TextView t = new TextView(this);
         t.setText(text);
         t.setTextColor(Color.WHITE);
-        t.setTextSize(16);\n        t.setGravity(Gravity.CENTER_VERTICAL);\n        t.setMaxLines(4);
+        t.setTextSize(16);
+        t.setGravity(Gravity.CENTER_VERTICAL);
+        t.setMaxLines(4);
         t.setPadding(0, 12, 0, 12);
         return t;
     }

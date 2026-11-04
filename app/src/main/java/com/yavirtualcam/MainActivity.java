@@ -123,7 +123,11 @@ public class MainActivity extends Activity {
     Button button(String text) {
         Button b = new Button(this);
         b.setText(text);
-        b.setTextSize(12);
+        b.setTextSize(10);
+        b.setMinWidth(0);
+        b.setMinimumWidth(0);
+        b.setPadding(2, 0, 2, 0);
+        b.setAllCaps(false);
         return b;
     }
 
